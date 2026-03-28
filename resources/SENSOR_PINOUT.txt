@@ -1,0 +1,51 @@
+COMPETITION HARDWARE PINOUT GUIDE
+==================================
+
+Microcontroller: ESP32-C6 Xiao Form Factor
+
+RESERVED PINS (DO NOT USE):
+- GPIO 5: I2C SDA (BME680)
+- GPIO 6: I2C SCL (BME680)
+- GPIO 21: LED (system indicator)
+
+AVAILABLE ADC PINS for Analog Sensors:
+- GPIO 0, 1, 2, 3, 4: Recommended for 3.3V analog inputs
+- GPIO 8, 9: Alternative if GPIO 0-4 are exhausted
+
+SENSORS AND WIRING:
+==================
+
+1. BME680 (Digital I2C Temperature/Humidity/Pressure/Gas)
+   - Automatic: Connected via I2C (GPIO 5 = SDA, GPIO 6 = SCL)
+   - I2C Address: 0x76 or 0x77 (use I2C scan to verify)
+   - Library: Adafruit BME680
+   - Wiring: 3.3V, GND, SDA->GPIO5, SCL->GPIO6
+
+2. INA169 (Analog Current Sensor)
+   - Output Pin: Analog Voltage proportional to current
+   - Pin Assignment: Choose one ADC pin (GPIO 0-4)
+   - Wiring: 3.3V, GND, OUT->ADC Pin
+   - Calibration: Typical sensitivity 500mV per Amp
+   - Formula: Current(A) = ADC_Voltage / 0.5
+
+3. SPW2430 (Analog Microphone/Audio Input)
+   - Output Pin: Analog audio level (center at 1.65V for 3.3V input)
+   - Pin Assignment: Choose one ADC pin (GPIO 0-4)
+   - Wiring: 3.3V, GND, OUT->ADC Pin
+   - Note: Digital microphone - reads AC levels, not DC
+
+4. CO Sensor V1.0 (Analog Carbon Monoxide Sensor)
+   - Output Pin: Analog voltage (pinout unclear - verify on sensor)
+   - Pin Assignment: Choose one ADC pin (GPIO 0-4)
+   - Wiring: 3.3V, GND, A->ADC Pin
+   - Note: Slow response time (~60s), may need warm-up period
+
+COMPETITION DAY CHECKLIST:
+==========================
+[ ] Connect BME680 via I2C to GPIO 5/6
+[ ] Assign ADC pins for each analog sensor (create mapping)
+[ ] Run I2C_template.cpp to verify BME680 & I2C address
+[ ] Run ADC_template.cpp to verify analog readings
+[ ] Update main.cpp with actual pin assignments
+[ ] Test each sensor individually before integration
+[ ] Check ThingSpeak field assignments match sensor order

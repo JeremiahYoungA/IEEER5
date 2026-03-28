@@ -1,10 +1,10 @@
 #include <Arduino.h>
 #include <Wire.h>
 
-// ESP32 Default I2C Pins: SDA = GPIO 21, SCL = GPIO 22
-// If your competition board uses different pins, change them here:
-#define I2C_SDA 21
-#define I2C_SCL 22
+// ESP32-C6 Xiao Form Factor I2C Pins: SDA = GPIO 5, SCL = GPIO 6
+// DO NOT CHANGE THESE - Xiao form factor is hardwired to these pins
+#define I2C_SDA 5
+#define I2C_SCL 6
 
 void scanI2CBus() {
     byte error, address;
@@ -50,8 +50,11 @@ void setup() {
     scanI2CBus();
 
     // --- SENSOR INITIALIZATION BLOCK ---
-    // At 8:05 AM, drop your sensor.begin() code here.
-    // Example: if (!bme.begin(0x76)) { Serial.println("BME280 Not Found"); }
+    // BME680 (your I2C sensor) initialization:
+    // #include <Adafruit_BME680.h>
+    // Adafruit_BME680 bme;
+    // if (!bme.begin(0x76)) { Serial.println("BME680 Not Found"); }
+    // if (!bme.performReading()) { Serial.println("BME680 reading failed"); }
 }
 
 void loop() {

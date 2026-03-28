@@ -1,9 +1,13 @@
 #include <Arduino.h>
 
-// ESP32 ADC1 Pins (safe to use during WiFi operation):
-// GPIO32, GPIO33, GPIO34, GPIO35, GPIO36, GPIO37, GPIO38, GPIO39
-// ADC1_0=GPIO36, ADC1_3=GPIO39, ADC1_4=GPIO32, ADC1_5=GPIO33, ADC1_6=GPIO34, ADC1_7=GPIO35
-#define ANALOG_PIN 34  // GPIO34 (ADC1_6) - Change this to your sensor pin
+// ESP32-C6 Xiao ADC1 Pins (safe to use during WiFi operation):
+// GPIO0, GPIO1, GPIO2, GPIO3, GPIO4, GPIO5, GPIO6, GPIO7, GPIO8, GPIO9
+// Your available pins on Xiao: GPIO0-4 and GPIO8-9 (5 & 6 used by I2C)
+// Analog Sensors on Your Board:
+//   INA169 current sensor → Pick an ADC pin (GPIO0-4 recommended)
+//   SPW2430 microphone → Pick an ADC pin (GPIO0-4 recommended)  
+//   CO Sensor → Pick an ADC pin (GPIO0-4 recommended)
+#define ANALOG_PIN 0  // GPIO0 (ADC1_0) - Change to your actual sensor pin
 
 // ADC Resolution: 12-bit = 0-4095, 3.3V reference on ESP32
 #define ADC_MAX_VALUE 4095

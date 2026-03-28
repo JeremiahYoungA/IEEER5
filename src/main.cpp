@@ -1,6 +1,6 @@
 #include <Arduino.h>
 
-#define LED_PIN 2 // Most ESP32 Dev Modules have a blue LED on GPIO 2
+#define LED_PIN 21 // Xiao ESP32-C6 form factor LED pin
 
 void setup() {
     pinMode(LED_PIN, OUTPUT);
