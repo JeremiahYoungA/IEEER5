@@ -1,0 +1,13 @@
+Digital sensors:
+    BME680
+Analog sensors:
+    INA169 current sensor
+    SPW2430 microphone
+    CO sensor
+Microcontroller:
+    ESP32-C6 in Xiao form factor
+
+Other things:
+    USB A to C cable
+    A solderless breadboard
+    A collection of wires

@@ -1,0 +1,1 @@
+Do not use GPIO0,2,4,12-15, reserve for wifi

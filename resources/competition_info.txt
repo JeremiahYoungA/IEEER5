@@ -1,0 +1,4 @@
+Overview for competition
+Build an IoT sensor Node. You will be given a small ESP32 module and a handful of smart and analog sensors. You will connect them up and record environmental sensor measurements and then post them on a web site. You will provide a QR code to display at your sensor module so that anyone can click on it and see the sensor data being uploaded to your web site. This involves some understanding of I2C busses, the ADC on the ESP32 and coding using the Arduino IDE. The free web site will be provided. The contest starts at 8 am and concludes at 11 am for judging. Judging will be done by 12 noon when you can join the rest of the conference for lunch. I will have three levels of goals: minimum viable product (MVP), nominal and stretch. In each level, I will have three criteria for success. This way there will be a score of 0 to 9 for each team.
+Extra notes:
+Can use AI, Use ThingSpeak, any IDE that works
