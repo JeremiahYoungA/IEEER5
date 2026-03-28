@@ -3,7 +3,7 @@ Digital sensors:
 Analog sensors:
     INA169 current sensor
     SPW2430 microphone
-    CO sensor - CO Sensor V1.0 with an A, VCC, and GND is the only info on it
+    CO sensor - DF Robot sensor
 Microcontroller:
     ESP32-C6 in Xiao form factor
 
